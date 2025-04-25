@@ -18,3 +18,8 @@ class Player:
         #TODO: returnera True om det inte står något i vägen
 
 
+    def can_move(self, dx, dy, grid):
+        """Kontrollera om spelaren kan röra sig till en ny position"""
+        new_x = self.pos_x + dx
+        new_y = self.pos_y + dy
+        return not grid.is_blocked(new_x, new_y)  # False om det är en vägg
